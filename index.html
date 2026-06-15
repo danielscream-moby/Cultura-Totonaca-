@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Cultura Totonaca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Juego de Cultura Totonaca</h1>
+            <p class="subtitle">Aprende sobre nuestros antepasados totonacas</p>
+        </header>
+
+        <div class="game-wrapper">
+            <!-- Pantalla de inicio -->
+            <div id="inicio" class="screen active">
+                <div class="welcome-box">
+                    <h2>¡Bienvenido!</h2>
+                    <p>Descubre los misterios y maravillas de la cultura totonaca a través de este emocionante juego.</p>
+                    <div class="info-box">
+                        <h3>📚 ¿Qué aprenderás?</h3>
+                        <ul>
+                            <li>Historia y tradiciones totonacas</li>
+                            <li>Costumbres y celebraciones</li>
+                            <li>Arquitectura y arte</li>
+                            <li>Lengua y mitología</li>
+                        </ul>
+                    </div>
+                    <button class="btn-primary" onclick="iniciarJuego()">Comenzar Juego</button>
+                </div>
+            </div>
+
+            <!-- Pantalla del juego -->
+            <div id="juego" class="screen">
+                <div class="game-header">
+                    <div class="score-container">
+                        <span>Pregunta <span id="preguntaNum">0</span>/10</span>
+                        <span>Puntuación: <span id="puntuacion">0</span></span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <h2 id="pregunta"></h2>
+                </div>
+
+                <div class="options-container">
+                    <button class="option-btn" onclick="responder(0)">
+                        <span class="option-letter">A</span>
+                        <span class="option-text" id="op1"></span>
+                    </button>
+                    <button class="option-btn" onclick="responder(1)">
+                        <span class="option-letter">B</span>
+                        <span class="option-text" id="op2"></span>
+                    </button>
+                    <button class="option-btn" onclick="responder(2)">
+                        <span class="option-letter">C</span>
+                        <span class="option-text" id="op3"></span>
+                    </button>
+                </div>
+
+                <div id="feedback" class="feedback"></div>
+            </div>
+
+            <!-- Pantalla de resultados -->
+            <div id="resultados" class="screen">
+                <div class="results-box">
+                    <h2 id="mensajeFinal"></h2>
+                    <div class="score-display">
+                        <p>Tu puntuación final:</p>
+                        <p class="final-score"><span id="puntuacionFinal">0</span>/10</p>
+                    </div>
+                    <div id="calificacion" class="calificacion"></div>
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="volverAlInicio()">Jugar de Nuevo</button>
+                        <button class="btn-secondary" onclick="compartirResultados()">Compartir Resultados</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>🌿 Honrando la cultura y tradición totonaca 🌿</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
